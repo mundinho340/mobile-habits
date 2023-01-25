@@ -1,0 +1,2 @@
+// 1 - para usar o svg no react native precisamos de instalar uma bibliotea.
+// ex:  npx expo install react-native-svg 
