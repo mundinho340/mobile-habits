@@ -16,7 +16,7 @@ export default function App() {
     Inter_600SemiBold,
     Inter_700Bold,
     Inter_800ExtraBold
-    //create ao
+    //create ao 
   })
   if(!fontsLoaded){
     return <Loading/>;
