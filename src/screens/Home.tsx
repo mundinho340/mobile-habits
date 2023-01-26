@@ -25,7 +25,7 @@ export default function Home(){
                     }
                 </View>
 
-                <View className="flex-row">
+                <View className="flex-row flex-wrap">
                     {
                         datesFromYearStart.map(date =>(
                             <HabitDay
@@ -35,7 +35,7 @@ export default function Home(){
                         ))
                     }
                 </View>
-            <HabitDay/>
+        
         </View>
     )
 
