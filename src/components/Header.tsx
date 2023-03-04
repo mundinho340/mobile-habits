@@ -2,6 +2,7 @@ import { View, TouchableOpacity, Text } from 'react-native'
 import {Feather} from '@expo/vector-icons'
 import Logo from "../assets/logo.svg"
 import colors from 'tailwindcss/colors'
+import { useNavigation } from '@react-navigation/native'
 
 
 export function Header(){
