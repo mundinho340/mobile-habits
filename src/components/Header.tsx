@@ -13,7 +13,7 @@ export function Header(){
             <TouchableOpacity
                 activeOpacity={0.7}
                 className='flex-row h-11 px-4 border border-violet-500 rounded-lg items-center'
-                onPress={()=> navigate('new')}
+                onPress={()=> navigate('newh')}
             >   
                 <Feather
                     name='plus'
