@@ -15,7 +15,7 @@ export function AppRoutes(){
         />
 
         <Screen
-            name="new"
+            name="newh"
             component={Newh}
         />
 
