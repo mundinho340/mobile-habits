@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { View , Text, TextInput} from "react-native";
 import {ScrollView} from 'react-native'
 import { BackButton } from "../components/BackButton";
@@ -5,6 +6,14 @@ import { CheckBox } from "../components/CheckBox";
 
 
 export function Newh(){
+    const [weekDays, setWeekDays]= useState<number[]>([])
+    function handleToggleWeekDay(weekDayIndex:number){
+        if(weekDays.includes(weekDayIndex)){
+            setWeekDays(prevState => prevState.filter(weekDay => weekDay !== weekDayIndex))
+    }else{
+        setWeekDays(prevState => [...prevState, weekDayIndex])
+    }
+    }
     const availableWeekDays = ["Domingo","Segunda-feira","Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"]
     return(
           <View className="flex-1 bg-background px-8 pt-16">
@@ -28,9 +37,10 @@ export function Newh(){
                     {
                         availableWeekDays.map((weekDay, index)=>(
                         <CheckBox   
-                        checked
                         key={weekDay}
                         title={weekDay}
+                        checked={weekDays.includes(index)}
+                        onPress={()=>handleToggleWeekDay(index)}
                     />
                         ))
                     }

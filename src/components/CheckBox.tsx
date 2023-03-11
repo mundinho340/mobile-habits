@@ -1,11 +1,11 @@
-import {View,TouchableOpacity,Text} from 'react-native'
+import {View,TouchableOpacity,TouchableOpacityProps,Text} from 'react-native'
 import {Feather} from '@expo/vector-icons'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
-interface Props{
-    title:string
-    checked: boolean;
+interface Props extends TouchableOpacityProps{
+    title:string;
+    checked?: boolean;
 }
-export function CheckBox({ checked=false, title }:Props){
+export function CheckBox({ checked=false, title,...rest }:Props){
     return(
        <TouchableOpacity
         activeOpacity={0.7}
