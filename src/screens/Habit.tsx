@@ -27,7 +27,6 @@ export function Habit(){
                 <Text  className="text-white font-extrabold text-3l=xl">
                     {dayAndMonth}
                 </Text>
-
                 <ProgressBar/>
             </ScrollView>
 
