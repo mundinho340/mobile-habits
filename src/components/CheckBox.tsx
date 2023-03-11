@@ -1,5 +1,6 @@
 import {View,TouchableOpacity,TouchableOpacityProps,Text} from 'react-native'
 import {Feather} from '@expo/vector-icons'
+
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 interface Props extends TouchableOpacityProps{
     title:string;
