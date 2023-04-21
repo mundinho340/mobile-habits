@@ -1,11 +1,25 @@
 import React from 'react'
-import {SafeAreaView ,StyleSheet,View, Text } from 'react-native'
-import tw from ""
+import {SafeAreaView ,StyleSheet,View, Text, Image } from 'react-native'
+import tw from "tailwind-react-native-classnames"
+import NavOptions from '../components/NavOptions'
 
 const HomeScreens = () => {
   return (
-    <SafeAreaView>
-      <Text style={styles.text}>HomeScreens</Text>
+    <SafeAreaView style={tw`bg-white h-full`}>
+      <View style={tw`p-5`}>
+          <Image
+            style={{
+              width:100,
+              height:100,
+              resizeMode:"contain",
+            }}
+
+            source={{
+              uri:"https://links.papareact.com/gzs"
+            }}
+          />
+          <NavOptions/>
+      </View>
     </SafeAreaView>
   )
 }
