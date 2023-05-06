@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import MapView,{ Marker } from 'react-native-maps'
 import tw from 'tailwind-react-native-classnames'
 import { useSelector } from 'react-redux'
@@ -10,8 +10,15 @@ import { selectDestination, selectOrigin } from '../slices/navSlice'
 
 const Map = () => {
   const origin = useSelector(selectOrigin);
-  const destination = useSelector(selectDestination)
+  const destination = useSelector(selectDestination);
+  const mapRef = useRef(null);
 
+  useEffect(() =>{
+    if(!origin || !destination) return;
+
+    mapRef.current.fitToSuppliedMaekers(["origin", "destination"])
+
+  }, [origin, destination])
   return (
     <MapView
     
