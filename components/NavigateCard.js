@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View ,Image} from 'react-native'
 import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -13,10 +13,20 @@ const NavigateCard = () => {
     const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={tw`bg-yellow-300 flex-1`}>
-        <Text style={tw`text-center py-5 text-xl`}></Text>
-        <View style={tw`border-t border-gray-200 flex-shrink`}>
+    <SafeAreaView style={tw`bg-white flex-1`}>
+                <Image
+                    style={{
+                        width:40,
+                        height:40,
+                        marginTop:-40,
+                        zIndex:-1
+                    }}
+
+                    source={{uri:"https://github.com/mundinho340/mobile-habits/blob/main/img/home%20page/Burger%20Menu.png?raw=true"}}
+                />
             <View>
+        {/* <Text style={tw`text-center py-5 text-xl `}></Text> */}
+        <View style={tw`border-t border-gray-200 flex-shrink`}>
                 <GooglePlacesAutocomplete
                     styles={toInputBoxStyles}
                     fetchDetails={true}
@@ -35,10 +45,35 @@ const NavigateCard = () => {
                         key:GOOGLE_MAPS_APIKEY,
                         language:"en"
                     }}
-                    placeholder='Where to?'
+                    placeholder='Para onde vais?'
                     nearbyPlacesAPI='GooglePlacesSearch'
                     debounce={400}
                 />
+                <View className="origin" style={tw`bg-gray-100 rounded-lg h-10 mt-5 w-80 ml-5 flex`}> 
+                    <Image 
+                        style={{
+                            marginTop:12,
+                            marginLeft:12,
+                            width:20,
+                            height:20
+                        }}
+                        source={{uri:"https://github.com/mundinho340/mobile-habits/blob/main/img/home%20page/Ellipse%205.png?raw=true"}}
+                    />
+                    <Text style={tw`text-gray-500 text-center`}>selecione ponto de partida</Text>
+                </View>
+                  <View  className="origin" style={tw`bg-gray-100 rounded-lg h-10 mt-5 w-80 ml-5`}> 
+                         <Image 
+                        style={{
+                            marginTop:12,
+                            marginLeft:12,
+                            width:20,
+                            height:20,
+    
+                        }}
+                        source={{uri:"https://github.com/mundinho340/mobile-habits/blob/main/img/home%20page/ic_pin.png?raw=true"}}
+                    />
+                    <Text style={tw`text-gray-500 text-center`}>selecione o teu destino</Text>
+                </View>
             </View>
         </View>
 
